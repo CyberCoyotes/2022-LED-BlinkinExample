@@ -32,7 +32,7 @@ public class RobotContainer {
   // Subsystems
   //private final driveSubsystem m_driveSubsystem = new driveSubsystem();
   //private final addressableLED m_addressableLED = new addressableLED(PWMPorts.kAddressableLED);
-  public static final blinkinSubsystem m_blinkinSub = new blinkinSubsystem(PWMPorts.kBlinkin);
+  public static final blinkinSubsystem m_blinkin = new blinkinSubsystem(PWMPorts.kBlinkin);
 
   // Commands
   //private final driveCommand m_driveCommand = new driveCommand(m_driveSubsystem);
@@ -61,10 +61,10 @@ public class RobotContainer {
     final JoystickButton ybutton = new JoystickButton(m_driveController, Button.kY.value);
 
     // abutton.whileHeld(() -> m_addressableLED.rainbow(), m_addressableLED);
-    abutton.onTrue(Commands.run(() -> m_blinkinSub.rainbow(), m_blinkinSub));
-    //bbutton.onTrue(Command.run(() -> m_blinkin.chase_blue(), m_blinkin));
-    // xbutton.onTrue(() -> m_blinkin.set(-0.35), m_blinkin);   // Red Scanner
-    // ybutton.onTrue(() -> m_blinkin.set(0.93), m_blinkin);    // White
+    abutton.onTrue(Commands.run(() -> m_blinkin.darkBlue(), m_blinkin));
+    bbutton.onTrue(Commands.run(() -> m_blinkin.chase_red(), m_blinkin));
+    xbutton.onTrue(Commands.run(() -> m_blinkin.chase_blue(), m_blinkin));
+    ybutton.onTrue(Commands.run(() -> m_blinkin.blend_to_black(), m_blinkin));
   }
 
   /**
