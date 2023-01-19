@@ -12,7 +12,7 @@ import edu.wpi.first.wpilibj.motorcontrol.Spark;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.RobotContainer;
 
-public class blinkin extends SubsystemBase {
+public class blinkinSubsystem extends SubsystemBase {
 
   /* Rev Robotics Blinkin takes a PWM signal from 1000-2000us
    * This is identical to a SparkMax motor. 
@@ -20,15 +20,15 @@ public class blinkin extends SubsystemBase {
    *  0   corresponds to 1500us
    *  +1  corresponds to 2000us
    */
-  private static Spark m_blinkin = null;
+  private static Spark m_blinkinSub = null;
 
   /**
    * Creates a new Blinkin LED controller.
    * 
    * @param pwmPort  The PWM port the Blinkin is connected to.
    */
-  public blinkin(int pwmPort) {
-    m_blinkin = new Spark(pwmPort);
+  public blinkinSubsystem(int pwmPort) {
+    m_blinkinSub = new Spark(pwmPort);
     rainbow();
   }
 
@@ -42,12 +42,20 @@ public class blinkin extends SubsystemBase {
    */ 
   public void set(double val) {
     if ((val >= -1.0) && (val <= 1.0)) {
-      m_blinkin.set(val);
+      m_blinkinSub.set(val);
     }
   }
 
   public void rainbow() {
     set(-0.99);
+  }
+
+  public void chase_red() {
+    set(-0.31);
+  }
+
+  public void chase_blue() {
+    set(-0.29);
   }
 
   public void blend_to_black() {
@@ -58,11 +66,11 @@ public class blinkin extends SubsystemBase {
   public void allianceColor() {
     boolean isRed = NetworkTableInstance.getDefault().getTable("FMSInfo").getEntry("IsRedAlliance").getBoolean(true);
     if (isRed == true){
-      RobotContainer.m_blinkin.set(-0.31);
-      System.out.println("LED Chase Red");
+      RobotContainer.m_blinkinSub.rainbow();
+      System.out.println("Red Alliance");
     } else {
-      RobotContainer.m_blinkin.set(-0.29);
-      System.out.println("LED Chase Blue");
+      RobotContainer.m_blinkinSub.chase_blue();
+      System.out.println("Blue Alliance");
     }
   }
 }
