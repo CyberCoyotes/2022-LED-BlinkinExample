@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.XboxController.Button;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.RunCommand;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
@@ -60,7 +61,7 @@ public class RobotContainer {
     final JoystickButton ybutton = new JoystickButton(m_driveController, Button.kY.value);
 
     // abutton.whileHeld(() -> m_addressableLED.rainbow(), m_addressableLED);
-    abutton.onTrue(Command.run(() -> m_blinkinSub.chase_red(), m_blinkinSub));
+    abutton.onTrue(Commands.run(() -> m_blinkinSub.rainbow(), m_blinkinSub));
     //bbutton.onTrue(Command.run(() -> m_blinkin.chase_blue(), m_blinkin));
     // xbutton.onTrue(() -> m_blinkin.set(-0.35), m_blinkin);   // Red Scanner
     // ybutton.onTrue(() -> m_blinkin.set(0.93), m_blinkin);    // White

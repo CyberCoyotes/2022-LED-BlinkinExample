@@ -66,7 +66,7 @@ public class blinkinSubsystem extends SubsystemBase {
   public void allianceColor() {
     boolean isRed = NetworkTableInstance.getDefault().getTable("FMSInfo").getEntry("IsRedAlliance").getBoolean(true);
     if (isRed == true){
-      RobotContainer.m_blinkinSub.rainbow();
+      RobotContainer.m_blinkinSub.chase_red();
       System.out.println("Red Alliance");
     } else {
       RobotContainer.m_blinkinSub.chase_blue();
