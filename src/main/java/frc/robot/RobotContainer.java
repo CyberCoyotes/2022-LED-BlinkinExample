@@ -62,9 +62,9 @@ public class RobotContainer {
 
     // abutton.whileHeld(() -> m_addressableLED.rainbow(), m_addressableLED);
     abutton.onTrue(Commands.run(() -> m_blinkin.darkBlue(), m_blinkin));
-    bbutton.onTrue(Commands.run(() -> m_blinkin.chase_red(), m_blinkin));
+    bbutton.onTrue(Commands.run(() -> m_blinkin.darkRed(), m_blinkin));
     xbutton.onTrue(Commands.run(() -> m_blinkin.chase_blue(), m_blinkin));
-    ybutton.onTrue(Commands.run(() -> m_blinkin.blend_to_black(), m_blinkin));
+    ybutton.onTrue(Commands.run(() -> m_blinkin.chase_red(), m_blinkin));
   }
 
   /**

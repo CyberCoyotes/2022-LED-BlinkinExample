@@ -30,7 +30,7 @@ public class blinkinSubsystem extends SubsystemBase {
   public blinkinSubsystem(int pwmPort) {
     m_blinkin = new Spark(pwmPort);
     // Default
-    allianceColor();
+    // chase_red();
   }
 
   /*
@@ -61,6 +61,10 @@ public class blinkinSubsystem extends SubsystemBase {
 
   public void blend_to_black() {
     set(-0.03);
+  }
+
+  public void darkRed() {
+    set(0.59);
   }
 
   public void darkBlue() {
