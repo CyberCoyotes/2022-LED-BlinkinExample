@@ -31,7 +31,8 @@ import frc.robot.subsystems.driveSubsystem;
 public class RobotContainer {
   // Subsystems
   //private final driveSubsystem m_driveSubsystem = new driveSubsystem();
-  //private final addressableLED m_addressableLED = new addressableLED(PWMPorts.kAddressableLED);
+
+  // TODO Blinkin reference
   public static final blinkinSubsystem m_blinkin = new blinkinSubsystem(PWMPorts.kBlinkin);
 
   // Commands
@@ -54,6 +55,8 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj.Joystick} or {@link XboxController}), and then passing it to a
    * {@link edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
+
+  // TODO Blinkin references
   private void configureButtonBindings() {
     final JoystickButton abutton = new JoystickButton(m_driveController, Button.kA.value);
     final JoystickButton bbutton = new JoystickButton(m_driveController, Button.kB.value);
@@ -63,7 +66,7 @@ public class RobotContainer {
     final JoystickButton r1button = new JoystickButton(m_driveController, Button.kRightBumper.value);
     final JoystickButton startbutton = new JoystickButton(m_driveController, Button.kStart.value);
 
-    // abutton.whileHeld(() -> m_addressableLED.rainbow(), m_addressableLED);
+
     abutton.onTrue(Commands.run(() -> m_blinkin.darkBlue(), m_blinkin));
     bbutton.onTrue(Commands.run(() -> m_blinkin.darkRed(), m_blinkin));
     xbutton.onTrue(Commands.run(() -> m_blinkin.chase_blue(), m_blinkin));

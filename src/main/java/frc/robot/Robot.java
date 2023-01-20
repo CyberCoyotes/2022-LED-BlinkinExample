@@ -50,7 +50,8 @@ public class Robot extends TimedRobot {
     // block in order for anything in the Command-based framework to work.
     CommandScheduler.getInstance().run();
     
-    // Commented out because it was running the entire telop
+    // TODO Blinkin reference commented out because it was running the entire time and not overriden by button inputs
+    
     // RobotContainer.m_blinkin.allianceColor();
 
     
