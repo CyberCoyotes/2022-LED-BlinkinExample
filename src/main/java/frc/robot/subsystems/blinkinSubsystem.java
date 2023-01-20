@@ -20,7 +20,7 @@ public class blinkinSubsystem extends SubsystemBase {
    *  0   corresponds to 1500us
    *  +1  corresponds to 2000us
    */
-  private static Spark m_blinkin = null;
+  public static Spark m_blinkin = null;
 
   /**
    * Creates a new Blinkin LED controller.
@@ -102,8 +102,8 @@ public class blinkinSubsystem extends SubsystemBase {
     }
   }
 
-  public void aprilTagID() {
-    int aprilColor = 1; 
+  public void aprilTagColor() {
+    int aprilColor = 2; 
 
     if (aprilColor == 1) {
       RobotContainer.m_blinkin.violet();
