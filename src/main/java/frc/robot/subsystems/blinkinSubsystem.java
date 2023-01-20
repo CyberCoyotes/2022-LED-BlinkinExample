@@ -101,4 +101,20 @@ public class blinkinSubsystem extends SubsystemBase {
       System.out.println("Blue Alliance");
     }
   }
+
+  public void aprilTagID() {
+    int aprilColor = 1; 
+
+    if (aprilColor == 1) {
+      RobotContainer.m_blinkin.violet();
+      System.out.println("April Tag is 1");
+    
+    }
+    if (aprilColor == 2) {
+      RobotContainer.m_blinkin.gold();
+      System.out.println("April Tag is 2");
+    } 
+    
+  }
+
 }
