@@ -50,7 +50,15 @@ public class blinkinSubsystem extends SubsystemBase {
   public void rainbow() {
     set(-0.99);
   }
+  
+  public void oceanPallete () {
+    set(-0.75);
+  }
 
+  public void wave_ocean () {
+    set(-0.41);
+  }
+  
   public void chase_red() {
     set(-0.31);
   }
@@ -66,11 +74,22 @@ public class blinkinSubsystem extends SubsystemBase {
   public void darkRed() {
     set(0.59);
   }
+  
+  public void gold() {
+    set(0.67);
+  }
+
+  public void yellow() {
+    set(0.69);
+  }
 
   public void darkBlue() {
     set(0.85);
   }
-
+ 
+  public void violet() {
+    set(0.91);
+  }
 
   public void allianceColor() {
     boolean isRed = NetworkTableInstance.getDefault().getTable("FMSInfo").getEntry("IsRedAlliance").getBoolean(true);

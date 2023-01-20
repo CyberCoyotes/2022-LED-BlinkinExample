@@ -59,12 +59,19 @@ public class RobotContainer {
     final JoystickButton bbutton = new JoystickButton(m_driveController, Button.kB.value);
     final JoystickButton xbutton = new JoystickButton(m_driveController, Button.kX.value);
     final JoystickButton ybutton = new JoystickButton(m_driveController, Button.kY.value);
+    final JoystickButton l1button = new JoystickButton(m_driveController, Button.kLeftBumper.value);
+    final JoystickButton r1button = new JoystickButton(m_driveController, Button.kRightBumper.value);
+    final JoystickButton startbutton = new JoystickButton(m_driveController, Button.kStart.value);
 
     // abutton.whileHeld(() -> m_addressableLED.rainbow(), m_addressableLED);
     abutton.onTrue(Commands.run(() -> m_blinkin.darkBlue(), m_blinkin));
     bbutton.onTrue(Commands.run(() -> m_blinkin.darkRed(), m_blinkin));
     xbutton.onTrue(Commands.run(() -> m_blinkin.chase_blue(), m_blinkin));
     ybutton.onTrue(Commands.run(() -> m_blinkin.chase_red(), m_blinkin));
+    l1button.onTrue(Commands.run(() -> m_blinkin.gold(), m_blinkin));
+    r1button.onTrue(Commands.run(() -> m_blinkin.violet(), m_blinkin));
+    startbutton.onTrue(Commands.run(() -> m_blinkin.wave_ocean(), m_blinkin));
+
   }
 
   /**
